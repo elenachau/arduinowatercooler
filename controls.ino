@@ -1,23 +1,26 @@
 #define RDA 0x80
 #define TBE 0x20
 // useful for uart ^
-//libraries vvv
+//libraries 
 #include <dht.h> //install the DHTLib library
 #include <LiquidCrystal.h>
 #include <Stepper.h> // Include the header file
 #include <Wire.h>
 #include <RTClib.h>
+
 //pointers for uart
 volatile unsigned char *myUCSR0A = (unsigned char *)0x00C0;
 volatile unsigned char *myUCSR0B = (unsigned char *)0x00C1;
 volatile unsigned char *myUCSR0C = (unsigned char *)0x00C2;
 volatile unsigned int *myUBRR0 = (unsigned int *)0x00C4;
 volatile unsigned char *myUDR0 = (unsigned char *)0x00C6;
+
 //pointers for adc
 volatile unsigned char *my_ADMUX = (unsigned char *)0x7C;
 volatile unsigned char *my_ADCSRB = (unsigned char *)0x7B;
 volatile unsigned char *my_ADCSRA = (unsigned char *)0x7A;
 volatile unsigned int *my_ADC_DATA = (unsigned int *)0x78;
+
 //GPIO pointers
 volatile unsigned char *port_b = (unsigned char *)0x25;
 volatile unsigned char *ddr_b = (unsigned char *)0x24;
